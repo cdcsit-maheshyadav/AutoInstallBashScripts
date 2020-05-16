@@ -82,7 +82,8 @@ else
 		#H "<----Category: Security---->" on
 			1_security "	PIA VPN (Network Mgr Version)" off
 			2_security "	PIA VPN (GUI Version)" off
-			3_security "	Open vpnbook" off
+			3_security "	Open VPNBook" off
+			4_security "	Windscribe VPN" off
 		#I "<----Category: Utility---->" on
 		    1_utility "	Virtualbox" off
 		    2_utility "	KXStudio Jack Setup (Advanced Audio)" off
@@ -481,6 +482,16 @@ else
 				#Install Open Vpn Book
 				echo "Installing Open Vpn Book"
 				$install network-manager-openvpn network-manager-openvpn-gnome 
+				;;
+			4_security)
+				#Windscribe
+				echo "Installing Windscribe"
+				if ! [ -e /etc/apt/sources.list.d/brave11.list ]; then
+					sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
+					echo 'deb https://repo.windscribe.com/ubuntu zesty main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
+				fi
+				apt update 
+				$install windscribe-cli
 				;;
 	
 	# Section I ----------utility------------------------	
