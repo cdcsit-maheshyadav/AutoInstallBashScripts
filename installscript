@@ -486,7 +486,7 @@ else
 			4_security)
 				#Windscribe
 				echo "Installing Windscribe"
-				if ! [ -e /etc/apt/sources.list.d/brave11.list ]; then
+				if ! [ -e /etc/apt/sources.list.d/windscribe-repo.list ]; then
 					sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key FDC247B7
 					echo 'deb https://repo.windscribe.com/ubuntu zesty main' | sudo tee /etc/apt/sources.list.d/windscribe-repo.list
 				fi
