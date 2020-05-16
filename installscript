@@ -69,6 +69,7 @@ else
 	       	4_internet "	get-iplayer (SNAP)" off	
 	       	5_internet "	Chromium (SNAP)" off  
 	       	6_internet "	Brave Browser" off     
+	       	7_internet "	Skype" off     
 	    #G "<----Category: Video, Audio & Pic Editing---->" on
 	        1_edit "	Kdenlive" off
 	        2_edit "	Shotwell" off
@@ -99,6 +100,10 @@ else
 			14_utility "  Kazam" off
 			15_utility "  Plank" off
 			16_utility "  Flameshot" off
+			17_utility "  Bleachbit" off
+			18_utility "  Delgue" off
+			19_utility "  Uget aria2" off
+			20_utility "  Catfish" off
 		#J "<----Category: Coding & FTP---->" on
 			1_coding "	Pycharm Pro (Pycharm Tools SNAP)" off
 	    	2_coding "	Sublime Text" off # any option can be set to default to "on"
@@ -376,6 +381,14 @@ else
 				apt update 
 				$install brave-browser brave-keyring
 				;;
+			7_internet)
+				#Skype
+				echo "Installing Skype"							
+				wget -O $tmp_dir/skypeforlinux-64.deb https://go.skype.com/skypeforlinux-64.deb			
+				dpkg -i $tmp_dir/skypeforlinux-64.deb
+				$install -f				
+				sleep 1
+				;;	
 	# Section G -------------edit(Video/Audio/Pic)---------------------	
 			1_edit)
 				#Kdenlive
@@ -614,6 +627,26 @@ else
 			16_utility)
 				echo "Installing Flameshot"
 				$install flameshot
+				sleep 1
+				;;
+			17_utility)
+				echo "Installing Bleachbit"
+				$install bleachbit
+				sleep 1
+				;;
+			18_utility)
+				echo "Installing Deluge"
+				$install deluge
+				sleep 1
+				;;
+			19_utility)
+				echo "Installing Uget aria2"
+				$install uget aria2
+				sleep 1
+				;;
+			20_utility)
+				echo "Installing Catfish"
+				$install catfish
 				sleep 1
 				;;
         
