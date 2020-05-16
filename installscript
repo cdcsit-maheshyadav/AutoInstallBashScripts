@@ -384,12 +384,14 @@ else
 				;;
 			7_internet)
 				#Skype
-				echo "Installing Skype"							
-				wget -O $tmp_dir/skypeforlinux-64.deb https://go.skype.com/skypeforlinux-64.deb			
+				if ! [ -e /etc/apt/sources.list.d/skype-stable.list ]; then
+					wget -O $tmp_dir/skypeforlinux-64.deb https://go.skype.com/skypeforlinux-64.deb			
 				dpkg -i $tmp_dir/skypeforlinux-64.deb
-				$install -f				
-				sleep 1
-				;;	
+				$install -f	
+				fi
+				apt update 
+				$install skypeforlinux
+				;;
 	# Section G -------------edit(Video/Audio/Pic)---------------------	
 			1_edit)
 				#Kdenlive
