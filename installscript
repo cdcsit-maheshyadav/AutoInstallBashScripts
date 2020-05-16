@@ -105,6 +105,8 @@ else
 			18_utility "  Delgue" off
 			19_utility "  Uget aria2" off
 			20_utility "  Catfish" off
+			21_utility "  Redshift" off
+			22_utility "  Firewall UFW" off
 		#J "<----Category: Coding & FTP---->" on
 			1_coding "	Pycharm Pro (Pycharm Tools SNAP)" off
 	    	2_coding "	Sublime Text" off # any option can be set to default to "on"
@@ -135,7 +137,6 @@ else
 				$install flatpak -y
 				sleep 1
 				;;
-
 			2_repos)	
 				#Install Snap Repository (Software Repository)
 				echo "Installing Snap Repository"
@@ -143,7 +144,6 @@ else
 				sleep 1
 				;;
 # Section B -------notes---------------------------
-
 			1_notes)
 			    #Simplenote (SNAP)
 				echo "Installing Simplenote"
@@ -152,7 +152,6 @@ else
 				sleep 1
 				;;
 # Section C --------social-------------------------
-
 			1_social)
 				#Mumble Client
 				echo "Installing Mumble"
@@ -170,8 +169,7 @@ else
 				wget https://zoom.us/client/latest/zoom_amd64.deb -O $tmp_dir/zoom_install.deb
 				dpkg -i $tmp_dir/zoom_install.deb
 				sleep 1
-				;;
-				
+				;;				
 			3_social)
 				#Telegram
 				echo "Telegram Snap"
@@ -179,7 +177,6 @@ else
 				snap install telegram-desktop
 				sleep 1
 				;;
-
 			4_social)
 				#Discord
 				echo "Installing Discord (SNAP)"
@@ -187,14 +184,12 @@ else
 				snap install discord
 				sleep 1
 				;;
-
 			5_social)	
 				#Hexchat
 				echo "Installing Hexchat"
 				$install hexchat
 				sleep 1
-				;;
-			
+				;;			
 			6_social) 
 				#Signal (SNAP)
 				echo "Installing Signal Messenger (SNAP)"
@@ -202,7 +197,6 @@ else
 				snap install signal-desktop
 				sleep 1
     			;;
-
     		7_social)
     			#Whalebird (SNAP)
     			echo "Installing Whalebird Mastodon App (SNAP)"
@@ -210,9 +204,7 @@ else
     			snap install whalebird
                 sleep 1
 				;;
-
 # Section D -----------tweak-----------------------
-
 			1_tweak)
 				#Elementary OS Tweaks
 				echo "Installing Elementary Tweaks"
@@ -225,15 +217,13 @@ else
 				echo "Installing Ubuntu Restricted Extras"
 				$install ubuntu-restricted-extras
 				sleep 1
-				;;
-			
+				;;			
 			3_tweak)
 				#Gnome tweak tool
 				echo "Installing Gnome Tweak Tool"
 				$install gnome-tweak-tool
 				sleep 1
 				;;
-
 			4_tweak) 
 				#Install monitor move window script Xfce
 				echo "Downloading Monitor move window script"
@@ -243,13 +233,11 @@ else
 		    	echo "Script now resides at /home/$USER/Documents/move-to-next-monitor"
 				sleep 1
 				;;
-
 			5_tweak)
 				#Install Midnight Commander
 				echo "Install Midnight Commander"
 				$install mc
 				;;
-
 			6_tweak)
 				#Install i3wm
 				echo "Installing i3wm & config"
@@ -299,23 +287,19 @@ else
 				chown -R $USER:$USER /home/$USER/.config/xfce4
 				chown -R $USER:$USER /home/$USER/.config/i3
 				;;
-
 # Section E -------------media---------------------
-
 			1_media)
 				#SMPlayer
 				echo "Installing SMPlayer"
 				$install smplayer 
 				sleep 1
 				;;
-
 			2_media) 
 				#Pithos
 				echo "Installing Pithos"
 				$install pithos 
 				sleep 1
 				;;
-
 			3_media) 
 				#Google Desktop Player (SNAP)
 				echo "Installing Google Desktop Player (SNAP)"
@@ -323,7 +307,6 @@ else
 				snap install google-play-music-desktop-player
 				sleep 1
 				;;
-
 			4_media)
 				#Audio-recorder
 				echo "Installing Audio-recorder"
@@ -351,27 +334,24 @@ else
 				dpkg -i /tmp/ais/vivaldi.deb
 				$install -f 
 				;;
-
 			3_internet)
 				#Firefox Browser
 				echo "Firefox"
 				$install firefox 
 				;;
-
 			4_internet) 
 				#get-iplayer (SNAP)
 				echo "Installing get-iplayer (SNAP)"
 				check_snap
 				snap install get-iplayer
 				;;
-
 			5_internet) 
 				#Chromium (SNAP)
 				echo "Installing Chromium"
 				check_snap
 				snap install Chromium
 				sleep 1
-			;;
+				;;
 			6_internet)
 				#Brave Browser
 				echo "Installing Brave Browser"
@@ -399,15 +379,13 @@ else
 				echo "Installing Kdenlive"
 				$install kdenlive breeze-icon-theme vlc frei0r-plugins dvdauthor 
 				sleep 1
-				;;
-				
+				;;				
 			2_edit)	
 				#Shotwell
 				echo "Installing Shotwell"
 				$install shotwell 
 				sleep 1
-				;;            
-    		
+				;;    		
 			3_edit)
 				#GIMP (SNAP)
 				echo "Installing GIMP"
@@ -415,7 +393,6 @@ else
 				snap install gimp --edge
 				sleep 1
 				;;
-
 			4_edit)
 				#OBS Studio
 				echo "Installing OBS Studio"
@@ -425,21 +402,18 @@ else
 				$install obs-studio 
 				sleep 1
 				;;
-
 			5_edit)
 				#OBS Studio (SNAP)
 				echo "Installing OBS Studio (SNAP)"	
 				check_snap
 				snap install obs-studio
 				;;
-
 			6_edit) 
 				#Audacity
 				echo "installing Audacity"
 				$install audacity 
 				sleep 1
 				;;
-
 			7_edit) 
 				#ffmpeg (latest) (SNAP)
 				echo "Installing ffmpeg"
@@ -447,8 +421,7 @@ else
 				check_snap
 				snap install ffmpeg --classic
 				sleep 1
-				;;
-			
+				;;			
 			8_edit)
 				#OcenAudio Editor
 				echo "Installing OcenAudio"
@@ -456,7 +429,6 @@ else
 				dpkg -i $tmp_dir/ocenaudio.deb
 				sleep 1
 				;;
-
 	# Section H -----------security-----------------------	
 			1_security)	
 				#PIA VPN NM Version
@@ -466,7 +438,6 @@ else
 				echo "After entering username, go to network manager and turn on VPN and select from PIA locations, enter password and boom!"
 				sleep 1
 				;;
-
 			2_security)	
 				#PIA VPN GUI
 				## I'm not officially sure if this will work. Will need to test it.
@@ -495,17 +466,14 @@ else
 				fi
 				apt update 
 				$install windscribe-cli
-				;;
-	
+				;;	
 	# Section I ----------utility------------------------	
-
     		1_utility)	
     			#Virtualbox
 				echo "Installing Virtualbox"
 				$install virtualbox 
 				sleep 1
 				;;
-
 			2_utility) 
 				#Advanced Jack Audio Setup
 				## TODO: Clean this up -> the debs need to be labeled for easier understanding
@@ -533,8 +501,7 @@ else
 				#cd ~/
 				#cp ~/jacksetup/start_jack.sh /etc/init.d/
 				#update-rc.d start_jack.sh defaults
-				;; 
-
+				;;
 			3_utility) 
 				#Etcher ISO Creator
 				## TODO: Add menu .desktop icon for easier accessibility
@@ -547,21 +514,18 @@ else
 				ln -s /home/$USER/Downloads/etcher.AppImage /usr/local/bin/etcher
 				sleep 1
 				;;
-
 			4_utility) 
 				#Tilix (Tiling Terminal)
 				echo "Installing Tilix"
 				$install tilix 
 				sleep 1
 				;;
-
 			5_utility)
 				#Skynet/Terminator
 				echo "Installing Terminator"
 				$install terminator 
 				sleep 1
 				;;
-
 			6_utility) 
 				#Synology NAS Assistant & Backup
 				echo "Installing Syn Assist and CloudStation Backup"
@@ -572,43 +536,36 @@ else
 				$install -f 
 				sleep 1
 				;;
-
 			7_utility) 
 				#Gnome-do
 				echo "Installing GnomeDo"
 				$install gnome-do gnome-do-plugins
 				sleep 1
 				;;
-
 			8_utility) 
 				#Install Catfish
 				echo "Installing Catfish"
 				$install catfish
-
 				sleep 1
 				;;
-
 			9_utility) 
 				#Guvcview
 				echo "Installing Guvcview"
 				$install libgsl2 libguvcview guvcview 
 				sleep 1
 				;;
-
 			10_utility) 
 				#Cheese
 				echo "Installing Cheese"
 				$install cheese 
 				sleep 1
-				;;
-			
+				;;			
 			11_utility) 
 				#Fish
 				echo "Installing Fish"
 				$install fish 
 				sleep 1
 				;;
-
 			12_utility)
 				#kvm
 				echo "Installing KVM"
@@ -618,8 +575,7 @@ else
 				adduser $USER libvirtd
 				systemctl restart libvirtd
 				sleep 1
-				;;
-				
+				;;				
 			13_utility) #Docker
 				echo "Installing Docker"
 				$install apt-transport-https ca-certificates curl software-properties-common
@@ -663,9 +619,17 @@ else
 				$install catfish
 				sleep 1
 				;;
-        
+			21_utility)
+				echo "Installing Redshift"
+				$install redshift redshift-gtk
+				sleep 1
+				;;    
+			22_utility)
+				echo "Installing Firewall UFW"
+				$install ufw
+				sleep 1
+				;;        
 	# Section J -----------coding-----------------------	
-
 			1_coding) 	
 				#Python Tools (Dev Testing)
 				echo "Installing Python Tools"
@@ -677,7 +641,6 @@ else
 				snap install pycharm-professional
 				sleep 1
 				;;
-
 	        2_coding)
 	            #Install Sublime Text*
 				echo "Installing Sublime Text"
@@ -699,36 +662,31 @@ else
 				apm install atom-html-preview
 				sleep 1
 				;;
-
 			4_coding)	
 				#Putty
 				echo "Installing Putty"
 				$install putty
 				sleep 1
 				;;
-
 			5_coding)
 				#Visual Studio Code
 				echo "Visual Studio Code"
 				wget -O $tmp_dir/visualstudio.deb https://go.microsoft.com/fwlink/?LinkID=760868
 				dpkg -i $tmp_dir/visualstudio.deb
 				sleep 1
-				;;
-	
+				;;	
 			6_coding)	
 				#Install Gedit
 				echo "Gedit"
 				$install gedit
 				sleep 1
-				;;
-			
+				;;			
 			7_coding)
 				#Filezilla (not related to Godzilla)
 				echo "Installing Filezilla"
 				$install filezilla 
 				sleep 1
 				;;
-
 			8_coding)
 				#SnapCraft
 				$install snapcraft build-essential 
@@ -741,14 +699,12 @@ else
 				$install git 
 				sleep 1
 				;;
-
 			1_gaming)
 				#Steam
 				echo "Installing Steam"				
 				$install steam 
 				sleep 1
 				;;
-
 			2_gaming)
 				#Lutris
 				echo "Installing Lutris"
@@ -758,42 +714,37 @@ else
 				apt update
 				$install lutris 
 				;;
-
 			3_gaming) 
 				#DOSBox-X (SNAP)
 				echo "Installing DOSBox-X"
 				check_snap
 				snap install dosbox-x
-				;;
-			
+				;;			
 			4_gaming)
 				#ScummVM (SNAP)
 				echo "Installing ScummVM"
 				check_snap
 				snap install scummvm
 				;;
-
 			5_gaming) 
 				#Gnome Twitch Client
 				echo "Installing Gnome Twitch client"
 				$install gnome-twitch 
-				;;
-			
+				;;			
 			6_gaming)
 				#Install AMD Drivers from PPA
 				echo "Installing PPA AMD Drivers for Proton"
 				add-apt-repository ppa:paulo-miguel-dias/mesa
 				apt dist-upgrade
 				$install mesa-vulkan-drivers mesa-vulkan-drivers:i386 
-				;;			
+				;;	
 			L)  
 				#Clean up
 				echo "Cleaning up"
 				$update
 				apt autoremove -y
 				rm -rf $tmp_dir
-				;;
-	
+				;;	
 	    esac
 	done
 fi
