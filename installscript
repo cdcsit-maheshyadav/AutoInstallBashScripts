@@ -95,9 +95,10 @@ else
 			10_utility "	Cheese" off	
 			11_utility "	Fish (command line shell)" off
 			12_utility "	KVM" off
-			13_utility " Docker(CE)" off
-			14_utility " Kazam" off
-			15_utility " Plank" off
+			13_utility "  Docker(CE)" off
+			14_utility "  Kazam" off
+			15_utility "  Plank" off
+			16_utility "  Flameshot" off
 		#J "<----Category: Coding & FTP---->" on
 			1_coding "	Pycharm Pro (Pycharm Tools SNAP)" off
 	    	2_coding "	Sublime Text" off # any option can be set to default to "on"
@@ -107,6 +108,7 @@ else
             6_coding "	Gedit" off
 	        7_coding "	Filezilla" off
 	        8_coding "	Snapcraft (For Snap Dev)" off
+	        9_coding "	Git" off
 		#K "<----Category: Gaming & Fun---->" on
 			1_gaming "	Steam (Valve)" off
 			2_gaming "	Lutris" off
@@ -609,6 +611,11 @@ else
 				$install plank
 				sleep 1
 				;;
+			16_utility)
+				echo "Installing Flameshot"
+				$install flameshot
+				sleep 1
+				;;
         
 	# Section J -----------coding-----------------------	
 
@@ -679,6 +686,12 @@ else
 				$install snapcraft build-essential 
 				mkdir -p ~/mysnaps
 				chown -R $USER:$USER ~/mysnaps
+				;;
+			9_coding)
+				#Steam
+				echo "Installing Git"				
+				$install git 
+				sleep 1
 				;;
 
 			1_gaming)
