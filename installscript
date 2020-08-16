@@ -62,6 +62,8 @@ else
 	        2_media "	Pithos (Pandora)" off
 	    	3_media "	Google Desktop Player (SNAP)" off
 	    	4_media "	Audio-recorder Flac" off
+		5_media "	VLC Player" off
+		6_media "	Adobe Flash Player" off
 	    #F "<----Category: Internet---->" on
 	        1_internet "	Google Chrome" off
 	        2_internet "	Vivaldi" off
@@ -92,21 +94,21 @@ else
 			5_utility "	Terminator" off
 			6_utility "	Synology NAS Backup" off
 			7_utility "	Gnome-do (Search Tool)" off
-            8_utility "	Catfish - (File Search)" off
+            		8_utility "	Catfish - (File Search)" off
 			9_utility "	Guvcview (webcam settings)" off
 			10_utility "	Cheese" off	
 			11_utility "	Fish (command line shell)" off
 			12_utility "	KVM" off
-			13_utility "  Docker(CE)" off
-			14_utility "  Kazam" off
-			15_utility "  Plank" off
-			16_utility "  Flameshot" off
-			17_utility "  Bleachbit" off
-			18_utility "  Delgue" off
-			19_utility "  Uget aria2" off
-			20_utility "  Catfish" off
-			21_utility "  Redshift" off
-			22_utility "  Firewall UFW" off
+			13_utility " Docker(CE)" off
+			14_utility " Kazam" off
+			15_utility " Plank" off
+			16_utility " Flameshot" off
+			17_utility " Bleachbit" off
+			18_utility " Delgue" off
+			19_utility " Uget aria2" off
+			20_utility " Catfish" off
+			21_utility " Redshift" off
+			22_utility " Firewall UFW" off			
 		#J "<----Category: Coding & FTP---->" on
 			1_coding "	Pycharm Pro (Pycharm Tools SNAP)" off
 	    	2_coding "	Sublime Text" off # any option can be set to default to "on"
@@ -313,6 +315,20 @@ else
 				apt-add-repository ppa:audio-recorder/ppa
 				apt update
 				$install audio-recorder 
+				sleep 1
+				;;
+			5_media)
+				#VLC Player
+				echo "Installing VLC Player"
+				apt update
+				$install vlc
+				sleep 1
+				;;
+			6_media)
+				#Adobe Flash Player
+				echo "Installing Adobe Flash Player"
+				apt update
+				$install pepperflashplugin-nonfree
 				sleep 1
 				;;
 # Section F -------------internet--------------------
@@ -626,9 +642,9 @@ else
 				;;    
 			22_utility)
 				echo "Installing Firewall UFW"
-				$install ufw
+				$install ufw gufw
 				sleep 1
-				;;        
+				;;     			     
 	# Section J -----------coding-----------------------	
 			1_coding) 	
 				#Python Tools (Dev Testing)
