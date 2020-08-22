@@ -108,9 +108,11 @@ else
 			19_utility " Uget aria2" off
 			20_utility " Catfish" off
 			21_utility " Redshift" off
-			22_utility " Firewall UFW" off			
+			22_utility " Firewall UFW" off
+			23_utility " CopyQ" off	
+			24_utility " Caffeine" off		
 		#J "<----Category: Coding & FTP---->" on
-			1_coding "	Pycharm Pro (Pycharm Tools SNAP)" off
+			1_codng "	Pycharm Pro (Pycharm Tools SNAP)" off
 	    	2_coding "	Sublime Text" off # any option can be set to default to "on"
 			3_coding "	Atom" off
 			4_coding "	Putty" off
@@ -643,6 +645,16 @@ else
 			22_utility)
 				echo "Installing Firewall UFW"
 				$install ufw gufw
+				sleep 1
+				;;   
+			23_utility)
+				echo "Installing CopyQ"
+				$install copyq
+				sleep 1
+				;;   
+			24_utility)
+				echo "Caffeine"
+				$install caffeine
 				sleep 1
 				;;     			     
 	# Section J -----------coding-----------------------	
